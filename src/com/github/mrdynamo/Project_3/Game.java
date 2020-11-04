@@ -1,16 +1,26 @@
 package com.github.mrdynamo.Project_3;
 
-public class Game implements GameTree {
+public class Game extends BinaryTreeBasis<T> implements GameTree {
+    TreeNode<String> qRoot, yesRoot, noRoot, curr;
 
     // Start game - implement
     @Override
     public void startGame(String question, String yesAnswer, String noAnswer) {
-
+        qRoot = new TreeNode<>(question);
+        yesRoot = new TreeNode<>(yesAnswer);
+        noRoot = new TreeNode<>(noAnswer);
+        qRoot.leftChild = yesRoot;
+        qRoot.rightChild = noRoot;
+        curr = qRoot;
     }
 
     // New round - implement
     @Override
     public void newRound() {
+        // if game tree exists
+        //if () {
+
+        //}
 
     }
 
@@ -56,4 +66,13 @@ public class Game implements GameTree {
         return false;
     }
 
+    @Override
+    public void setRootItem(T newItem) {
+        try {
+            //qRoot.item = newItem;
+            //root.item = newItem;
+        } catch (UnsupportedOperationException e) {
+            // Throw error
+        }
+    }
 }
