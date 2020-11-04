@@ -5,7 +5,7 @@ package com.github.mrdynamo.Project_3;
 class TreeNode<T> {
   T item; // Question
   TreeNode<?> leftChild; // Yes answer
-  TreeNode<T> rightChild; // No answer
+  TreeNode<?> rightChild; // No answer
 
   public TreeNode(T newItem) {
   // Initializes tree node with item and no children.

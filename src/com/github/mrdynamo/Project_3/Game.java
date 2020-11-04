@@ -1,51 +1,60 @@
 package com.github.mrdynamo.Project_3;
 
-public class Game extends BinaryTreeBasis<T> implements GameTree {
-    TreeNode<String> qRoot, yesRoot, noRoot, curr;
+public class Game extends BinaryTreeBasis<String> implements GameTree {
+    TreeNode<String> curr;
+
+    public Game() {
+        // Creates empty GameTree and initializes with super constructor
+        super();
+    }
 
     // Start game - implement
     @Override
     public void startGame(String question, String yesAnswer, String noAnswer) {
-        qRoot = new TreeNode<>(question);
-        yesRoot = new TreeNode<>(yesAnswer);
-        noRoot = new TreeNode<>(noAnswer);
-        qRoot.leftChild = yesRoot;
-        qRoot.rightChild = noRoot;
-        curr = qRoot;
+        setRootItem(question);
+        TreeNode<String> noMove1 = new TreeNode<>("No");
+        TreeNode<String> yesMove1 = new TreeNode<>("Yes");
+        root.leftChild = yesMove1;
+        root.rightChild = noMove1;
+        curr = root;
     }
 
     // New round - implement
     @Override
     public void newRound() {
-        // if game tree exists
-        //if () {
-
-        //}
-
+        // If tree exists, reset current node to root node
+        if (!this.isEmpty())
+            curr = root;
+        else
+            throw new TreeException("TreeException: Root tree is empty or does not exist!");
     }
 
     // End game - implement
     @Override
     public void endGame() {
-
+        System.out.println("Game has ended.\n\tThanks for playing!");
     }
 
     // Move yes - implement
     @Override
     public void moveYes() throws TreeException {
-
+        if (curr.leftChild != null) {
+            //curr = curr.leftChild;
+        }
     }
 
     // Move no - implement
     @Override
     public void moveNo() throws TreeException {
-
+        if (curr.leftChild != null) {
+            //curr = curr.rightChild;
+        }
     }
 
     // Get question - implement
     @Override
     public String getQuestion() throws TreeException {
-        return null;
+        return curr.item;
     }
 
     // Set question - implement
@@ -57,7 +66,10 @@ public class Game extends BinaryTreeBasis<T> implements GameTree {
     // Get answer - implement
     @Override
     public String getAnswer() throws TreeException {
-        return null;
+        if (curr == null)
+            throw new TreeException("TreeException: No node for current answer!");
+        else
+            return curr.item;
     }
 
     // Is question? - implement
@@ -67,10 +79,9 @@ public class Game extends BinaryTreeBasis<T> implements GameTree {
     }
 
     @Override
-    public void setRootItem(T newItem) {
+    public void setRootItem(String newItem) {
         try {
-            //qRoot.item = newItem;
-            //root.item = newItem;
+            root = new TreeNode<>(newItem);
         } catch (UnsupportedOperationException e) {
             // Throw error
         }

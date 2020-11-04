@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class GameDriver {
 
     /** Class Variables **/
-    //private boolean quit = false;
 
     /** Class Methods **/
 
@@ -13,15 +12,19 @@ public class GameDriver {
     public static void main(String[] args) {
         boolean quit = false;
         Scanner input = new Scanner(System.in);
-        Game game1 = new Game();
+
+        GameTree game1 = new Game();
         game1.startGame("Is 5 > 4", "yes", "no");
 
         while (!quit) {
-            if (input.equals("quit")) {
+            System.out.println(game1.getQuestion());
+            if (input.nextLine().equalsIgnoreCase("quit"))
                 quit = true;
-            }
             else {
-
+                if (input.nextLine().equalsIgnoreCase(game1.getAnswer()))
+                    game1.moveYes();
+                else
+                    game1.moveNo();
             }
         }
 
