@@ -1,0 +1,70 @@
+YES -> YES
+YES -> NO
+NO -> YES
+NO -> NO
+YES -> YES
+NO -> YES
+YES -> NO -> YES
+YES -> NO -> NO
+NO -> NO -> YES
+NO -> NO -> NO
+YES -> YES -> YES -> YES
+NO -> NO -> NO -> NO
+
+
+Does it have legs? yes
+Is it a Cat? no
+Enter a question: Does it bark
+Enter the answer to that question: Dog
+
+Would you like to continue? yes
+
+Does it have legs? yes
+Does it bark? yes
+Is it a Dog? yes
+
+I win!
+The animal you were thinking of was a Dog
+
+Would you like to continue? yes
+
+Does it have legs? yes
+Does it bark? yes
+Is it a Dog? no
+Enter a question: Does it live in the woods
+Enter the answer to that question: Wolf
+
+Would you like to continue? yes
+
+Does it have legs? yes
+Does it bark? yes
+Does it live in the woods? yes
+Is it a Wolf? yes
+
+I win!
+The animal you were thinking of was a Wolf
+
+Would you like to continue? yes
+
+Does it have legs? yes
+Does it bark? no
+Is it a Cat? no
+Enter a question: Does it have a trunk
+Enter the answer to that question: Elephant
+
+Would you like to continue? yes
+
+Does it have legs? yes
+Does it bark? no
+Does it have a trunk? yes
+Is it a Elephant? no
+Enter a question: Does it have a hard shell
+Enter the answer to that question: Aardvark
+
+Would you like to continue? yes
+
+Does it have legs? yes
+Does it bark? no
+Does it have a trunk? yes
+Does it have a hard shell? yes
+Is it a Aardvark? yes

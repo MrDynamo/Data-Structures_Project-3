@@ -1,7 +1,8 @@
 package com.github.mrdynamo.Project_3;
 
 public class Game extends BinaryTreeBasis<String> implements GameTree {
-    TreeNode<String> curr;
+    private TreeNode<String> curr;
+    private String yesAns, noAns;
 
     public Game() {
         // Creates empty GameTree and initializes with super constructor
@@ -12,11 +13,13 @@ public class Game extends BinaryTreeBasis<String> implements GameTree {
     @Override
     public void startGame(String question, String yesAnswer, String noAnswer) {
         setRootItem(question);
-        TreeNode<String> noMove1 = new TreeNode<>("No");
-        TreeNode<String> yesMove1 = new TreeNode<>("Yes");
-        root.leftChild = yesMove1;
-        root.rightChild = noMove1;
+        TreeNode<String> rightNode = new TreeNode<>(noAnswer);
+        TreeNode<String> leftNode = new TreeNode<>(yesAnswer);
+        root.leftChild = leftNode;
+        root.rightChild = rightNode;
         curr = root;
+        yesAns = yesAnswer;
+        noAns = noAnswer;
     }
 
     // New round - implement
@@ -32,6 +35,7 @@ public class Game extends BinaryTreeBasis<String> implements GameTree {
     // End game - implement
     @Override
     public void endGame() {
+        //this.makeEmpty();
         System.out.println("Game has ended.\n\tThanks for playing!");
     }
 
@@ -39,7 +43,7 @@ public class Game extends BinaryTreeBasis<String> implements GameTree {
     @Override
     public void moveYes() throws TreeException {
         if (curr.leftChild != null) {
-            //curr = curr.leftChild;
+            curr = curr.leftChild;
         }
     }
 
@@ -47,20 +51,26 @@ public class Game extends BinaryTreeBasis<String> implements GameTree {
     @Override
     public void moveNo() throws TreeException {
         if (curr.leftChild != null) {
-            //curr = curr.rightChild;
+            curr = curr.rightChild;
         }
     }
 
     // Get question - implement
     @Override
     public String getQuestion() throws TreeException {
-        return curr.item;
+        if (curr == null)
+            throw new TreeException("TreeException: No node for current answer!");
+        else
+            return curr.item;
     }
 
     // Set question - implement
     @Override
     public void setQuestion(String question, String answer) {
-
+        TreeNode<String> tmp = curr;
+        TreeNode<String> newNode = new TreeNode<>(question);
+        curr = newNode;
+        newNode.rightChild = tmp;
     }
 
     // Get answer - implement
@@ -75,7 +85,14 @@ public class Game extends BinaryTreeBasis<String> implements GameTree {
     // Is question? - implement
     @Override
     public boolean isQuestion() {
-        return false;
+        return curr.rightChild != null && curr.leftChild != null;
+        /*
+        if (curr.item.contains("?"))
+            return true;
+        else
+            return false;
+
+         */
     }
 
     @Override
