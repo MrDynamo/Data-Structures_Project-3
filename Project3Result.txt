@@ -1,0 +1,168 @@
+/Library/Java/JavaVirtualMachines/jdk-13.jdk/Contents/Home/bin/java -javaagent:/Users/dc6546oj/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/202.6948.69/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=53375:/Users/dc6546oj/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/202.6948.69/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Users/dc6546oj/Documents/GitHub/Data-Structures_Project-3/out/production/Data-Structures_Project-3 com.github.mrdynamo.Project_3.GameDriver
+Think of an animal and I will guess it!
+
+Does it have legs?
+yes
+Is it a Cat?
+
+yes
+I win!
+The animal you were thinking of was a Cat!
+
+Do you want to continue?
+yes
+Does it have legs?
+yes
+Is it a Cat?
+
+no
+Please enter a question:
+Does it have 2 legs?
+Please enter the answer to that question:
+Human
+
+Do you want to continue?
+yes
+Does it have legs?
+no
+Is it a Snake?
+
+yes
+I win!
+The animal you were thinking of was a Snake!
+
+Do you want to continue?
+yes
+Does it have legs?
+no
+Is it a Snake?
+
+no
+Please enter a question:
+Is it slimy?
+Please enter the answer to that question:
+Snail
+
+Do you want to continue?
+yes
+Does it have legs?
+yes
+Does it have 2 legs?
+yes
+Is it a Human?
+
+yes
+I win!
+The animal you were thinking of was a Human!
+
+Do you want to continue?
+yes
+Does it have legs?
+no
+Is it slimy?
+yes
+Is it a Snail?
+
+yes
+I win!
+The animal you were thinking of was a Snail!
+
+Do you want to continue?
+yes
+Does it have legs?
+yes
+Does it have 2 legs?
+no
+Is it a Cat?
+
+yes
+I win!
+The animal you were thinking of was a Cat!
+
+Do you want to continue?
+yes
+Does it have legs?
+yes
+Does it have 2 legs?
+no
+Is it a Cat?
+
+no
+Please enter a question:
+Does it bark?
+Please enter the answer to that question:
+Dog
+
+Do you want to continue?
+yes
+Does it have legs?
+no
+Is it slimy?
+no
+Is it a Snake?
+
+yes
+I win!
+The animal you were thinking of was a Snake!
+
+Do you want to continue?
+yes
+Does it have legs?
+no
+Is it slimy?
+no
+Is it a Snake?
+
+no
+Please enter a question:
+Does it have wings?
+Please enter the answer to that question:
+Butterfly
+
+Do you want to continue?
+yes
+Does it have legs?
+yes
+Does it have 2 legs?
+yes
+Is it a Human?
+
+no
+Please enter a question:
+Does it have 8 legs?
+Please enter the answer to that question:
+Spider
+
+Do you want to continue?
+yes
+Does it have legs?
+no
+Is it slimy?
+no
+Does it have wings?
+no
+Is it a Snake?
+
+no
+Please enter a question:
+Does it swim?
+Please enter the answer to that question:
+Fish
+
+Do you want to continue?
+yes
+Does it have legs?
+no
+Is it slimy?
+no
+Does it have wings?
+no
+Does it swim?
+no
+Is it a Snake?
+
+yes
+I win!
+The animal you were thinking of was a Snake!
+
+Do you want to continue?
