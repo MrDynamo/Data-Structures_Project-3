@@ -28,8 +28,6 @@ public class Game extends BinaryTreeBasis<String> implements GameTree {
         // If tree exists, reset current node to root node
         if (!this.isEmpty())
             curr = root;
-        else
-            throw new TreeException("TreeException: Root tree is empty or does not exist!");
     }
 
     // End game - implement
@@ -42,26 +40,28 @@ public class Game extends BinaryTreeBasis<String> implements GameTree {
     // Move yes - implement
     @Override
     public void moveYes() throws TreeException {
-        if (curr.leftChild != null) {
+        if (curr.leftChild != null)
             curr = curr.leftChild;
-        }
+        else
+            throw new TreeException("TreeException: Child is null!");
     }
 
     // Move no - implement
     @Override
     public void moveNo() throws TreeException {
-        if (curr.leftChild != null) {
+        if (curr.rightChild != null)
             curr = curr.rightChild;
-        }
+        else
+            throw new TreeException("TreeException: Child is null!");
     }
 
     // Get question - implement
     @Override
     public String getQuestion() throws TreeException {
-        if (curr == null)
-            throw new TreeException("TreeException: No node for current answer!");
-        else
+        if (curr != null)
             return curr.item;
+        else
+            throw new TreeException("TreeException: No node for current answer!");
     }
 
     // Set question - implement
@@ -69,30 +69,23 @@ public class Game extends BinaryTreeBasis<String> implements GameTree {
     public void setQuestion(String question, String answer) {
         TreeNode<String> tmp = curr;
         TreeNode<String> newNode = new TreeNode<>(question);
-        curr = newNode;
         newNode.rightChild = tmp;
+        curr = newNode;
     }
 
     // Get answer - implement
     @Override
     public String getAnswer() throws TreeException {
-        if (curr == null)
-            throw new TreeException("TreeException: No node for current answer!");
-        else
+        if (curr != null)
             return curr.item;
+        else
+            throw new TreeException("TreeException: No node for current answer!");
     }
 
     // Is question? - implement
     @Override
     public boolean isQuestion() {
         return curr.rightChild != null && curr.leftChild != null;
-        /*
-        if (curr.item.contains("?"))
-            return true;
-        else
-            return false;
-
-         */
     }
 
     @Override

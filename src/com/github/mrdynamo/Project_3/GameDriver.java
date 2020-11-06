@@ -42,11 +42,11 @@ public class GameDriver {
             }
 
             // Guess animal
-            System.out.println("Is it a " + game1.getAnswer() + "\n");
+            System.out.println("Is it a " + game1.getAnswer() + "?\n");
 
             // if yes, prog wins
             if (input.nextLine().equalsIgnoreCase("yes")) {
-                System.out.println("I win!\nThe animal you were thinking of was a " + game1.getAnswer());
+                System.out.println("I win!\nThe animal you were thinking of was a " + game1.getAnswer() + "!");
                 game1.newRound();
             }
             // if no, add new question
@@ -69,26 +69,7 @@ public class GameDriver {
 
         }
 
-        /*
-        while (!quit) {
-
-            System.out.println(game1.getQuestion());
-            if (input.nextLine().equalsIgnoreCase("quit"))
-                quit = true;
-            else {
-                if (input.nextLine().equalsIgnoreCase("yes"))
-                    game1.moveYes();
-                else if (input.nextLine().equalsIgnoreCase("no"))
-                    game1.moveNo();
-                else
-                    System.out.println("Please enter either 'yes' or 'no'.");
-            }
-
-
-        }
-
         game1.endGame();
 
-         */
     }
 }
