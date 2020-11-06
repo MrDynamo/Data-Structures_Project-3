@@ -13,7 +13,8 @@ public class GameDriver {
         boolean quit = false;
         boolean cont = true;
 
-        Scanner input = new Scanner(System.in);
+        Scanner kbd = new Scanner(System.in);
+        String input;
 
         GameTree game1 = new Game();
         game1.startGame("Does it have legs?", "Cat", "Snake");
@@ -27,13 +28,14 @@ public class GameDriver {
             while (game1.isQuestion()) {
 
                 System.out.println(game1.getQuestion());
+                input = kbd.nextLine();
 
-                if (input.nextLine().equalsIgnoreCase("quit"))
+                if (input.equalsIgnoreCase("quit"))
                     quit = true;
                 else {
-                    if (input.nextLine().equalsIgnoreCase("yes"))
+                    if (input.equalsIgnoreCase("yes"))
                         game1.moveYes();
-                    else if (input.nextLine().equalsIgnoreCase("no"))
+                    else if (input.equalsIgnoreCase("no"))
                         game1.moveNo();
                     else
                         System.out.println("Please enter either 'yes' or 'no'.");
@@ -43,28 +45,30 @@ public class GameDriver {
 
             // Guess animal
             System.out.println("Is it a " + game1.getAnswer() + "?\n");
+            input = kbd.nextLine();
 
             // if yes, prog wins
-            if (input.nextLine().equalsIgnoreCase("yes")) {
+            if (input.equalsIgnoreCase("yes")) {
                 System.out.println("I win!\nThe animal you were thinking of was a " + game1.getAnswer() + "!");
                 game1.newRound();
             }
             // if no, add new question
-            else if (input.nextLine().equalsIgnoreCase("no")) {
+            else if (input.equalsIgnoreCase("no")) {
                 System.out.println("Please enter a question: ");
-                String q = input.nextLine();
+                String q = kbd.nextLine();
                 System.out.println("Please enter the answer to that question: ");
-                String a = input.nextLine();
+                String a = kbd.nextLine();
                 game1.setQuestion(q, a);
                 game1.newRound();
             }
 
             // Prompt continue?
             System.out.println("\nDo you want to continue?\n");
+            input = kbd.nextLine();
 
-            if (input.nextLine().equalsIgnoreCase("yes"))
+            if (input.equalsIgnoreCase("yes"))
                 cont = true;
-            else if (input.nextLine().equalsIgnoreCase("no"))
+            else if (input.equalsIgnoreCase("no"))
                 cont = false;
 
         }

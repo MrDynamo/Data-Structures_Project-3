@@ -76,10 +76,10 @@ public class Game extends BinaryTreeBasis<String> implements GameTree {
     // Get answer - implement
     @Override
     public String getAnswer() throws TreeException {
-        if (curr != null)
+        if (curr != null && curr.rightChild == null && curr.leftChild == null)
             return curr.item;
         else
-            throw new TreeException("TreeException: No node for current answer!");
+            throw new TreeException("TreeException: Current node is not an answer node!");
     }
 
     // Is question? - implement
