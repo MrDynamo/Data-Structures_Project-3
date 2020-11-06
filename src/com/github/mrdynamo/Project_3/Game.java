@@ -1,7 +1,7 @@
 package com.github.mrdynamo.Project_3;
 
 public class Game extends BinaryTreeBasis<String> implements GameTree {
-    private TreeNode<String> curr;
+    private TreeNode<String> curr, prev;
     private String yesAns, noAns;
 
     public Game() {
@@ -18,6 +18,7 @@ public class Game extends BinaryTreeBasis<String> implements GameTree {
         root.leftChild = leftNode;
         root.rightChild = rightNode;
         curr = root;
+        prev = null;
         yesAns = yesAnswer;
         noAns = noAnswer;
     }
@@ -28,6 +29,7 @@ public class Game extends BinaryTreeBasis<String> implements GameTree {
         // If tree exists, reset current node to root node
         if (!this.isEmpty())
             curr = root;
+            prev = null;
     }
 
     // End game - implement
@@ -40,8 +42,10 @@ public class Game extends BinaryTreeBasis<String> implements GameTree {
     // Move yes - implement
     @Override
     public void moveYes() throws TreeException {
-        if (curr.leftChild != null)
+        if (curr.leftChild != null) {
+            prev = curr;
             curr = curr.leftChild;
+        }
         else
             throw new TreeException("TreeException: Child is null!");
     }
@@ -49,8 +53,10 @@ public class Game extends BinaryTreeBasis<String> implements GameTree {
     // Move no - implement
     @Override
     public void moveNo() throws TreeException {
-        if (curr.rightChild != null)
+        if (curr.rightChild != null) {
+            prev = curr;
             curr = curr.rightChild;
+        }
         else
             throw new TreeException("TreeException: Child is null!");
     }
@@ -68,9 +74,10 @@ public class Game extends BinaryTreeBasis<String> implements GameTree {
     @Override
     public void setQuestion(String question, String answer) {
         TreeNode<String> tmp = curr;
-        TreeNode<String> newNode = new TreeNode<>(question);
-        newNode.rightChild = tmp;
-        curr = newNode;
+        TreeNode<String> newAns = new TreeNode<>(answer);
+        TreeNode<String> newNode = new TreeNode<>(question, newAns, tmp);
+        prev.rightChild = newNode;
+        //curr = newNode;
     }
 
     // Get answer - implement
