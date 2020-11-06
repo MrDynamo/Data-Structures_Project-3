@@ -63,7 +63,7 @@ public class GameDriver {
             }
 
             // Prompt continue?
-            System.out.println("\nDo you want to continue?\n");
+            System.out.println("\nDo you want to continue?");
             input = kbd.nextLine();
 
             if (input.equalsIgnoreCase("yes"))

@@ -73,11 +73,12 @@ public class Game extends BinaryTreeBasis<String> implements GameTree {
     // Set question - implement
     @Override
     public void setQuestion(String question, String answer) {
-        TreeNode<String> tmp = curr;
         TreeNode<String> newAns = new TreeNode<>(answer);
-        TreeNode<String> newNode = new TreeNode<>(question, newAns, tmp);
-        prev.rightChild = newNode;
-        //curr = newNode;
+        TreeNode<String> newNode = new TreeNode<>(question, newAns, curr);
+        if (prev.leftChild == curr)
+            prev.leftChild = newNode;
+        else
+            prev.rightChild = newNode;
     }
 
     // Get answer - implement
